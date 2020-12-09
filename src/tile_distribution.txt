@@ -1,0 +1,12 @@
+# Landscape Tiles
+
+Field, Field, Forest (*), Mountain
+Field, Field, Water, Forest (*)
+Forest, Forest, Mountain (*), Field
+Forest, Forest, Water, Mountain (*)
+Mountain, Mountain, Field (*), Forest
+Mountain, Mountain, Water, Forest
+Field, Forest, Mountain, Water (*)
+Field, Field, Water (*), Mountain
+Forest, Forest, Water (*), Field
+Mountain, Mountain, Water (*), Forest

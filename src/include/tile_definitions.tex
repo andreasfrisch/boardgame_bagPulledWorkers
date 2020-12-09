@@ -1,0 +1,35 @@
+\def\shapeTile{(0,0) rectangle (2*\quadrantWidth,2*\quadrantHeight)}
+
+\newcommand{\tileBorder}{
+	\draw[dark_grey] \shapeTile;
+}
+
+\newcommand{\bottomLeftQuadrant}[2]{
+	\fill [#1] (0,0) rectangle (\quadrantWidth,\quadrantHeight);
+	\node (image) at (0.5*\quadrantWidth,0.5*\quadrantHeight) {\includegraphics[height=2.5cm]{icons/#2}};
+}
+
+\newcommand{\bottomRightQuadrant}[2]{
+	\fill [#1] (\quadrantWidth,0) rectangle (2*\quadrantWidth,\quadrantHeight);
+	\node (image) at (1.5*\quadrantWidth,0.5*\quadrantHeight) {\includegraphics[height=2.5cm]{icons/#2}};
+}
+
+\newcommand{\emptyBottomRightQuadrant}[1]{
+	\fill [#1] (\quadrantWidth,0) rectangle (2*\quadrantWidth,\quadrantHeight);
+}
+
+\newcommand{\topLeftQuadrant}[2]{
+	\fill [#1] (0,\quadrantHeight) rectangle (\quadrantWidth,2*\quadrantHeight);
+	\node (image) at (0.5*\quadrantWidth,1.5*\quadrantHeight) {\includegraphics[height=2.5cm]{icons/#2}};
+}
+
+\newcommand{\topRightQuadrant}[2]{
+	\fill [#1] (\quadrantWidth,\quadrantHeight) rectangle (2*\quadrantWidth,2*\quadrantHeight);
+	\node (image) at (1.5*\quadrantWidth,1.5*\quadrantHeight) {\includegraphics[height=2.5cm]{icons/#2}};
+	\node (image) at (1.9*\quadrantWidth,1.9*\quadrantHeight) {\includegraphics[height=0.25cm]{icons/star.png}};
+}
+
+\newcommand{\emptyTopRightQuadrant}[1]{
+	\fill [#1] (\quadrantWidth,\quadrantHeight) rectangle (2*\quadrantWidth,2*\quadrantHeight);
+	\node (image) at (1.9*\quadrantWidth,1.9*\quadrantHeight) {\includegraphics[height=0.25cm]{icons/star.png}};
+}

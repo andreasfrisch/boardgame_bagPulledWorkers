@@ -1,0 +1,15 @@
+\def\shapePlayerToken{(0,0) circle (0.5*\playerTokenDiameter)}
+\def\shapePlayerTokenMargin{(0,0) circle (\playerTokenDiameter)}
+
+\newcommand{\playerTokenMargin}{
+	\draw[dark_grey] \shapePlayerTokenMargin;
+}
+
+\newcommand{\playerTokenBorder}{
+	\draw[dark_grey] \shapePlayerToken;
+}
+
+\newcommand{\playerTokenImage}[1]{
+	\node (image) at (0,0) {\includegraphics[height=1.75cm]{icons/#1}};
+}
+

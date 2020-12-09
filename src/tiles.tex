@@ -1,0 +1,87 @@
+\documentclass[a4paper]{article}
+\input{include/libs.tex}
+\input{include/colors.tex}
+\input{include/sizes.tex}
+\input{include/tile_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{field}{wheat_white_stroke.png}
+	\bottomLeftQuadrant{field}{wheat_white_stroke.png}
+	\topRightQuadrant{forest}{wood_white_stroke.png}
+	\bottomRightQuadrant{mountain}{stone_white_stroke.png}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{field}{wheat_white_stroke.png}
+	\bottomLeftQuadrant{field}{wheat_white_stroke.png}
+	\topRightQuadrant{forest}{wood_white_stroke.png}
+	\emptyBottomRightQuadrant{water}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{field}{wheat_white_stroke.png}
+	\bottomLeftQuadrant{field}{wheat_white_stroke.png}
+	\emptyTopRightQuadrant{water}
+	\bottomRightQuadrant{mountain}{stone_white_stroke.png}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{forest}{wood_white_stroke.png}
+	\bottomLeftQuadrant{forest}{wood_white_stroke.png}
+	\topRightQuadrant{mountain}{stone_white_stroke.png}
+	\bottomRightQuadrant{field}{wheat_white_stroke.png}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{forest}{wood_white_stroke.png}
+	\bottomLeftQuadrant{forest}{wood_white_stroke.png}
+	\emptyTopRightQuadrant{water}
+	\bottomRightQuadrant{mountain}{stone_white_stroke.png}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{forest}{wood_white_stroke.png}
+	\bottomLeftQuadrant{forest}{wood_white_stroke.png}
+	\emptyTopRightQuadrant{water}
+	\bottomRightQuadrant{field}{wheat_white_stroke.png}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{mountain}{stone_white_stroke.png}
+	\bottomLeftQuadrant{mountain}{stone_white_stroke.png}
+	\topRightQuadrant{field}{wheat_white_stroke.png}
+	\bottomRightQuadrant{forest}{wood_white_stroke.png}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{mountain}{stone_white_stroke.png}
+	\bottomLeftQuadrant{mountain}{stone_white_stroke.png}
+	\emptyTopRightQuadrant{water}
+	\bottomRightQuadrant{field}{wheat_white_stroke.png}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{mountain}{stone_white_stroke.png}
+	\bottomLeftQuadrant{mountain}{stone_white_stroke.png}
+	\emptyTopRightQuadrant{water}
+	\bottomRightQuadrant{forest}{wood_white_stroke.png}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tileBorder
+	\topLeftQuadrant{forest}{wood_white_stroke.png}
+	\bottomLeftQuadrant{mountain}{stone_white_stroke.png}
+	\emptyTopRightQuadrant{water}
+	\bottomRightQuadrant{forest}{wood_white_stroke.png}
+\end{tikzpicture}
+
+\end{center}
+\end{document}

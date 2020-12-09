@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+\input{include/libs.tex}
+\input{include/colors.tex}
+\input{include/sizes.tex}
+\input{include/player_token_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\foreach \c in {black, teal, orange, pink, green}{
+	\begin{tikzpicture}
+		\playerTokenMargin
+		\playerTokenBorder
+		\playerTokenImage{tools_\c.png}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\playerTokenMargin
+		\playerTokenBorder
+		\playerTokenImage{banner_\c.png}
+	\end{tikzpicture}
+}
+
+\end{center}
+\end{document}
