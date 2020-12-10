@@ -1,4 +1,4 @@
-\pgfmathsetmacro{\playerBoardWidth}{5*\playerBoardSpace+5*\playerBoardMargin+\playerBoardMargin}
+\pgfmathsetmacro{\playerBoardWidth}{5*\playerBoardSpace+5*\playerBoardMargin+\playerBoardMargin+\playerBoardMargin}
 \pgfmathsetmacro{\playerBoardHeight}{3*\playerBoardSpace+4*\playerBoardMargin}
 
 \def\shapePlayerBoard{(0,0) rectangle (\playerBoardWidth,\playerBoardHeight)}
@@ -7,7 +7,7 @@
 	\draw[dark_grey] \shapePlayerBoard;
 }
 
-\newcommand{\playerBoardBottomRow}[1]{
+\newcommand{\playerBoardBottomRow}{
 	\foreach \n in {1,...,5}{
 		\draw[black] (\n*\playerBoardMargin+\n*\playerBoardSpace-\playerBoardSpace,\playerBoardMargin) rectangle
 			(\n*\playerBoardMargin+\n*\playerBoardSpace,\playerBoardMargin+\playerBoardSpace);
@@ -15,17 +15,31 @@
 	\foreach \n in {2,...,5}{
 		\filldraw[draw=black,fill=white] (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace-0.5*\playerBoardCostSpace,\playerBoardMargin-0.5*\playerBoardCostSpace) rectangle
 			(\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace+0.5*\playerBoardCostSpace,\playerBoardMargin+0.5*\playerBoardCostSpace);
-			\node at (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace,\playerBoardMargin) {
-				\scriptsize
-				\pgfmathparse{\n-1}
-				\pgfmathprintnumber[fixed, fixed zerofill, precision=0]{
-					\pgfmathresult
-				}
-			};
+		\node at (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace,\playerBoardMargin) {
+			\scriptsize
+			\pgfmathparse{\n-1}
+			\pgfmathprintnumber[fixed, fixed zerofill, precision=0]{
+				\pgfmathresult
+			}
+		};
 	};
 }
 
-\newcommand{\playerBoardMiddleRow}[1]{
+\newcommand{\playerBoardBottomRowCosts}[2]{
+	\filldraw[draw=black,fill=#1] (\playerBoardWidth-\playerBoardMargin-0.5*\playerBoardCostSpace,\playerBoardMargin+0.5*\playerBoardSpace-1.5*\playerBoardCostSpace) rectangle
+		(\playerBoardWidth-\playerBoardMargin+0.5*\playerBoardCostSpace,\playerBoardMargin+0.5*\playerBoardSpace-0.5*\playerBoardCostSpace);
+	\filldraw[draw=black,fill=#2] (\playerBoardWidth-\playerBoardMargin-0.5*\playerBoardCostSpace,\playerBoardMargin+0.5*\playerBoardSpace+1.5*\playerBoardCostSpace) rectangle
+		(\playerBoardWidth-\playerBoardMargin+0.5*\playerBoardCostSpace,\playerBoardMargin+0.5*\playerBoardSpace+0.5*\playerBoardCostSpace);
+}
+
+\newcommand{\playerBoardMiddleRowCosts}[2]{
+	\filldraw[draw=black,fill=#1] (\playerBoardWidth-\playerBoardMargin-0.5*\playerBoardCostSpace,2*\playerBoardMargin+1.5*\playerBoardSpace-1.5*\playerBoardCostSpace) rectangle
+		(\playerBoardWidth-\playerBoardMargin+0.5*\playerBoardCostSpace,2*\playerBoardMargin+1.5*\playerBoardSpace-0.5*\playerBoardCostSpace);
+	\filldraw[draw=black,fill=#2] (\playerBoardWidth-\playerBoardMargin-0.5*\playerBoardCostSpace,2*\playerBoardMargin+1.5*\playerBoardSpace+1.5*\playerBoardCostSpace) rectangle
+		(\playerBoardWidth-\playerBoardMargin+0.5*\playerBoardCostSpace,2*\playerBoardMargin+1.5*\playerBoardSpace+0.5*\playerBoardCostSpace);
+}
+
+\newcommand{\playerBoardMiddleRow}{
 	\foreach \n in {1,...,5}{
 		\draw[black] (\n*\playerBoardMargin+\n*\playerBoardSpace-\playerBoardSpace,2*\playerBoardMargin+\playerBoardSpace) rectangle
 			(\n*\playerBoardMargin+\n*\playerBoardSpace,2*\playerBoardMargin+2*\playerBoardSpace);
@@ -33,21 +47,19 @@
 	\foreach \n in {2,...,5}{
 		\filldraw[draw=black,fill=white] (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace-0.5*\playerBoardCostSpace,2*\playerBoardMargin+\playerBoardSpace-0.5*\playerBoardCostSpace) rectangle
 			(\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace+0.5*\playerBoardCostSpace,2*\playerBoardMargin+\playerBoardSpace+0.5*\playerBoardCostSpace);
-	\foreach \n in {2,...,5}{
 		\filldraw[draw=black,fill=white] (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace-0.5*\playerBoardCostSpace,2*\playerBoardMargin+\playerBoardSpace-0.5*\playerBoardCostSpace) rectangle
 			(\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace+0.5*\playerBoardCostSpace,2*\playerBoardMargin+\playerBoardSpace+0.5*\playerBoardCostSpace);
-			\node at (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace,2*\playerBoardMargin+\playerBoardSpace) {
-				\scriptsize
-				\pgfmathparse{\n-1}
-				\pgfmathprintnumber[fixed, fixed zerofill, precision=0]{
-					\pgfmathresult
-				}
-			};
-	};
+		\node at (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace,2*\playerBoardMargin+\playerBoardSpace) {
+			\scriptsize
+			\pgfmathparse{\n-1}
+			\pgfmathprintnumber[fixed, fixed zerofill, precision=0]{
+				\pgfmathresult
+			}
+		};
 	};
 }
 
-\newcommand{\playerBoardTopRow}[1]{
+\newcommand{\playerBoardTopRow}{
 	\foreach \n in {1,...,3}{
 		\node (image) at (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace,3*\playerBoardMargin+2.5*\playerBoardSpace) {\includegraphics[height=1.5cm]{icons/meeple_black_border.png}};
 	};

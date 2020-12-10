@@ -12,9 +12,11 @@
 \foreach \n in {1,...,4}{
 	\begin{tikzpicture}
 		\playerBoardBorder
-		\playerBoardTopRow{meeple_black_border.png}
-		\playerBoardMiddleRow{banner_green.png}
-		\playerBoardBottomRow{banner_pink.png}
+		\playerBoardTopRow
+		\playerBoardBottomRow
+		\playerBoardBottomRowCosts{forest}{mountain}
+		\playerBoardMiddleRow
+		\playerBoardMiddleRowCosts{field}{forest}
 	\end{tikzpicture}
 }
 
