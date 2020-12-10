@@ -1,0 +1,20 @@
+\documentclass[a4paper]{article}
+\input{include/libs.tex}
+\input{include/colors.tex}
+\input{include/sizes.tex}
+\input{include/state_board_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\begin{tikzpicture}
+	\stateBoardBorder
+	\stateBoardTopRow
+	\stateBoardMiddleRow
+	\stateBoardBottomRow
+\end{tikzpicture}
+
+\end{center}
+\end{document}

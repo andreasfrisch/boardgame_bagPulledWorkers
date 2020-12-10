@@ -1,0 +1,59 @@
+\pgfmathsetmacro{\stateBoardWidth}{4*\playerBoardSpace+4*\playerBoardMargin+\playerBoardMargin+\playerBoardMargin}
+\pgfmathsetmacro{\stateBoardHeight}{3*\playerBoardSpace+4*\playerBoardMargin}
+
+\def\shapeStateBoard{(0,0) rectangle (\stateBoardWidth,\stateBoardHeight)}
+
+\newcommand{\stateBoardBorder}{
+	\draw[dark_grey] \shapeStateBoard;
+}
+
+\newcommand{\stateBoardTopRow}{
+	\filldraw[draw=black,fill=field]
+		(4*\playerBoardMargin+3*\playerBoardSpace-2*\playerBoardCostSpace,
+		3*\playerBoardMargin+3*\playerBoardSpace-\playerBoardCostSpace)
+		rectangle
+		(4*\playerBoardMargin+3*\playerBoardSpace-1*\playerBoardCostSpace,
+		3*\playerBoardMargin+3*\playerBoardSpace-2*\playerBoardCostSpace);
+
+	\filldraw[draw=black,fill=mountain]
+		(4*\playerBoardMargin+3*\playerBoardSpace-2*\playerBoardCostSpace,
+		3*\playerBoardMargin+3*\playerBoardSpace-3*\playerBoardCostSpace)
+		rectangle
+		(4*\playerBoardMargin+3*\playerBoardSpace-1*\playerBoardCostSpace,
+		3*\playerBoardMargin+3*\playerBoardSpace-4*\playerBoardCostSpace);
+
+	\filldraw[draw=black,fill=white]
+		(4*\playerBoardMargin+3*\playerBoardSpace-2*\playerBoardCostSpace,
+		3*\playerBoardMargin+3*\playerBoardSpace-5*\playerBoardCostSpace)
+		rectangle
+		(4*\playerBoardMargin+3*\playerBoardSpace-1*\playerBoardCostSpace,
+		3*\playerBoardMargin+3*\playerBoardSpace-6*\playerBoardCostSpace);
+
+	\draw[black] (4*\playerBoardMargin+3*\playerBoardSpace,3*\playerBoardMargin+2*\playerBoardSpace) rectangle
+		(4*\playerBoardMargin+4*\playerBoardSpace,3*\playerBoardMargin+3*\playerBoardSpace);
+	\node at (4*\playerBoardMargin+3*\playerBoardSpace+0.5*\playerBoardSpace,4*\playerBoardMargin+2*\playerBoardSpace+0.5) {
+		\small Village
+	};
+}
+\newcommand{\stateBoardBottomRow}{
+	\foreach \n in {1,...,4}{
+		\draw[black] (\n*\playerBoardMargin+\n*\playerBoardSpace-\playerBoardSpace,\playerBoardMargin) rectangle
+			(\n*\playerBoardMargin+\n*\playerBoardSpace,\playerBoardMargin+\playerBoardSpace);
+	};
+	\foreach \n in {1,...,4}{
+		\filldraw[draw=black,fill=field] (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace-0.5*\playerBoardCostSpace,\playerBoardMargin-0.5*\playerBoardCostSpace) rectangle
+			(\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace+0.5*\playerBoardCostSpace,\playerBoardMargin+0.5*\playerBoardCostSpace);
+	};
+}
+\newcommand{\stateBoardMiddleRow}{
+	\foreach \n in {1,...,2}{
+		\draw[black] (\n*\playerBoardMargin+\n*\playerBoardSpace-\playerBoardSpace,2*\playerBoardMargin+\playerBoardSpace) rectangle
+			(\n*\playerBoardMargin+\n*\playerBoardSpace,2*\playerBoardMargin+2*\playerBoardSpace);
+	};
+	\foreach \n in {1,...,2}{
+		\filldraw[draw=black,fill=mountain] (\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace-0.5*\playerBoardCostSpace,2*\playerBoardMargin+\playerBoardSpace-0.5*\playerBoardCostSpace) rectangle
+			(\n*\playerBoardMargin+\n*\playerBoardSpace-0.5*\playerBoardSpace+0.5*\playerBoardCostSpace,2*\playerBoardMargin+\playerBoardSpace+0.5*\playerBoardCostSpace);
+	};
+}
+
+

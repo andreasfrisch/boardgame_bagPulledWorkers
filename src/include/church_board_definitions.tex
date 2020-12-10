@@ -1,0 +1,46 @@
+\pgfmathsetmacro{\churchBoardWidth}{3*\playerBoardSpace+3*\playerBoardMargin+\playerBoardMargin+\playerBoardMargin}
+\pgfmathsetmacro{\churchBoardHeight}{3*\playerBoardSpace+4*\playerBoardMargin}
+
+\def\shapeChurchBoard{(0,0) rectangle (\churchBoardWidth,\churchBoardHeight)}
+
+\newcommand{\churchBoardBorder}{
+	\draw[dark_grey] \shapeChurchBoard;
+}
+
+\newcommand{\churchBoardTopRow}{
+	\foreach \n in {1,...,3}{
+		\draw[black] (\n*\playerBoardMargin+\n*\playerBoardSpace-\playerBoardSpace,\playerBoardMargin) rectangle
+			(\n*\playerBoardMargin+\n*\playerBoardSpace,\playerBoardMargin+\playerBoardSpace);
+	};
+	\filldraw[draw=black,fill=field]
+		(4*\playerBoardMargin+3*\playerBoardSpace-0.5*\playerBoardCostSpace,
+		3*\playerBoardMargin+2.5*\playerBoardSpace-0.5*\playerBoardCostSpace)
+	rectangle
+		(4*\playerBoardMargin+3*\playerBoardSpace+0.5*\playerBoardCostSpace,
+		3*\playerBoardMargin+2.5*\playerBoardSpace+0.5*\playerBoardCostSpace);
+}
+\newcommand{\churchBoardMiddleRow}{
+	\foreach \n in {1,...,3}{
+		\draw[black] (\n*\playerBoardMargin+\n*\playerBoardSpace-\playerBoardSpace,2*\playerBoardMargin+\playerBoardSpace) rectangle
+			(\n*\playerBoardMargin+\n*\playerBoardSpace,2*\playerBoardMargin+2*\playerBoardSpace);
+	};
+	\filldraw[draw=black,fill=forest]
+		(4*\playerBoardMargin+3*\playerBoardSpace-0.5*\playerBoardCostSpace,
+		2*\playerBoardMargin+1.5*\playerBoardSpace-0.5*\playerBoardCostSpace)
+	rectangle
+		(4*\playerBoardMargin+3*\playerBoardSpace+0.5*\playerBoardCostSpace,
+		2*\playerBoardMargin+1.5*\playerBoardSpace+0.5*\playerBoardCostSpace);
+}
+\newcommand{\churchBoardBottomRow}{
+	\foreach \n in {1,...,3}{
+		\draw[black] (\n*\playerBoardMargin+\n*\playerBoardSpace-\playerBoardSpace,3*\playerBoardMargin+2*\playerBoardSpace) rectangle
+			(\n*\playerBoardMargin+\n*\playerBoardSpace,3*\playerBoardMargin+3*\playerBoardSpace);
+	};
+	\filldraw[draw=black,fill=mountain]
+		(4*\playerBoardMargin+3*\playerBoardSpace-0.5*\playerBoardCostSpace,
+		\playerBoardMargin+0.5*\playerBoardSpace-0.5*\playerBoardCostSpace)
+	rectangle
+		(4*\playerBoardMargin+3*\playerBoardSpace+0.5*\playerBoardCostSpace,
+		\playerBoardMargin+0.5*\playerBoardSpace+0.5*\playerBoardCostSpace);
+}
+
