@@ -1,0 +1,15 @@
+\def\shapeVillageToken{ (-0.5*\quadrantWidth,-0.5*\quadrantHeight) rectangle (0.5*\quadrantWidth,0.5*\quadrantHeight)}
+\def\shapeVillageTokenMargin{ (-0.75*\quadrantWidth,-0.75*\quadrantHeight) rectangle (0.75*\quadrantWidth,0.75*\quadrantHeight)}
+
+\newcommand{\villageTokenMargin}{
+	\draw[dark_grey] \shapeVillageTokenMargin;
+}
+
+\newcommand{\villageTokenBorder}{
+	\draw[dark_grey] \shapeVillageToken;
+}
+
+\newcommand{\villageTokenImage}[1]{
+	\node (image) at (0,0) {\includegraphics[height=4cm]{icons/#1}};
+}
+

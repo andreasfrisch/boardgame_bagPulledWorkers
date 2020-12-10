@@ -1,0 +1,22 @@
+\documentclass[a4paper]{article}
+\input{include/libs.tex}
+\input{include/colors.tex}
+\input{include/sizes.tex}
+\input{include/player_board_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\foreach \n in {1,...,4}{
+	\begin{tikzpicture}
+		\playerBoardBorder
+		\playerBoardTopRow{meeple_black_border.png}
+		\playerBoardMiddleRow{banner_green.png}
+		\playerBoardBottomRow{banner_pink.png}
+	\end{tikzpicture}
+}
+
+\end{center}
+\end{document}

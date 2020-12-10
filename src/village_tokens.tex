@@ -1,0 +1,21 @@
+\documentclass[a4paper]{article}
+\input{include/libs.tex}
+\input{include/colors.tex}
+\input{include/sizes.tex}
+\input{include/village_token_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\foreach \c in {1,...,10}{
+	\begin{tikzpicture}
+		\villageTokenMargin
+		\villageTokenBorder
+		\villageTokenImage{village_dark.png}
+	\end{tikzpicture}
+}
+
+\end{center}
+\end{document}
