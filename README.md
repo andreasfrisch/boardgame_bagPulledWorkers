@@ -19,7 +19,7 @@ State Board
 Drawstring bag or other opaque drawing container (from now: bag)
 
 Per player:
-	5 Workshops in the player colour
+	5 Houses in the player colour
 	5 Churches in the player colour
 	5 Popularity tokens (no colour required)
 	4 discs with distinguishable sides
@@ -108,6 +108,7 @@ A player may put a Church from his player board into play by paying the cost sho
 When putting a Church into play, the player has 2 choices; Unto the Landscape Tiles or unto the Church Board.
 
 A Chuch may be placed into any empty quadrant in an area containing one of the active player's discs showing the work side.
+A Church may also be placed unto any empty village adjacent to any quadrant of an area containing one of the active player's discs showing the work side.
 Placing a Church unto the Landscape Tiles has no immediate effect but will affect end game scoring.
 If a Church is placed on a Village, that Village counts as a Town for end game scoring.
 
@@ -123,8 +124,7 @@ When placing a Village it must be placed into an unoccupied area in an empty qua
 
 ### Trade
 
-A player may pay 1 Popularity to trade resources.
-For each popularity paid the player may trade 1 resource for 1 other resource.
+A player may pay 1 Popularity to trade reasource
 
 ### Pass
 
